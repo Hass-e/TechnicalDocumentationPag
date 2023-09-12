@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>PIC16F87XA</title>
+</head>
+<body>
+    <nav id="navbar">
+        <header><b>PIC16F87XA Data Sheet</b></header>
+        <ul>
+            <li><a href="#Devices_Included_in_this_Technical_documentation_page" class="nav-link">Devices Included in this Technical documentation page</a></li>
+            <li><a href="#DEVICE_OVERVIEW" class="nav-link">DEVICE OVERVIEW</a></li>
+            <li><a href="#MEMORY_ORGANIZATION" class="nav-link">MEMORY ORGANIZATION</a></li>
+            <li><a href="#DATA_EEPROM_AND_FLASH" class="nav-link">DATA EEPROM AND FLASH</a></li>
+            <li><a href="#I/O_PORTS" class="nav-link">I/O PORTS</a></li>
+            <li><a href="#TIMER_MODULE" class="nav-link">TIMER MODULE</a></li>
+            <li><a href="#PIC_Set_up" class="nav-link">PIC Set up</a></li>
+        </ul>
+        
+    </nav>
+    <main id="main-doc">
+        <h1>PIC16F87XA</h1>
+        <h2>Data Sheet</h2>
+        <section id="Devices_Included_in_this_Technical_documentation_page" class="main-section">
+            <header class="titles"><b>Devices Included in this Technical documentation page</b></header>
+            <p>
+                <ul>
+                    <li>PIC16F873A</li>
+                    <li>PIC16F874A</li>
+                    <li>PIC16F876A</li>
+                    <li>PIC16F877A</li>
+                </ul>
+            </p>
+            <p>High-Performance RISC CPU:
+                <ul>
+                    <li>Only 35 single-word instructions to learn</li>
+                    <li>All single-cycle instructions except for program branches, which are two-cycle DC – 200 ns instruction cycle</li>
+                    <li>Operating speed: DC – 20 MHz clock input</li>
+                    <li>Up to 8K x 14 words of Flash Program Memory, Up to 368 x 8 bytes of Data Memory (RAM), Up to 256 x 8 bytes of EEPROM Data Memory</li>
+                    <li>Pinout compatible to other 28-pin or 40/44-pin PIC16CXXX and PIC16FXXX microcontrollers</li>
+                </ul>
+            </p>
+            <p>Peripheral Features:
+                <ul>
+                    <li>Timer0: 8-bit timer/counter with 8-bit prescaler</li>
+                    <li>Timer1: 16-bit timer/counter with prescaler, can be incremented during Sleep via external crystal/clock</li>
+                    <li>Timer2: 8-bit timer/counter with 8-bit period register, prescaler and postscaler</li>
+                    <li>Two Capture, Compare, PWM modules</li>
+                    <li>Capture is 16-bit, max. resolution is 12.5 ns</li>
+                    <li>Compare is 16-bit, max. resolution is 200 ns</li>
+                    <li>PWM max. resolution is 10-bit</li>
+                    <li>Synchronous Serial Port (SSP) with SPI™ (Master mode) and I 2 C™ (Master/Slave)</li>
+                    <li>Universal Synchronous Asynchronous Receiver Transmitter (USART/SCI) with 9-bit address detection</li>
+                </ul>
+            </p>    
+        </section>
+        <section id="DEVICE_OVERVIEW" class="main-section">
+            <header class="titles"><b>DEVICE OVERVIEW</b></header>
+            <p>This document contains device specific information about the following devices:</p>
+            <p> 
+                <ul>
+                    <li>PIC16F873A</li>
+                    <li>PIC16F874A</li>
+                    <li>PIC16F876A</li>
+                    <li>PIC16F877A</li>
+                </ul>  
+            </p>
+            <p>
+                PIC16F873A/876A devices are available only in 28-pin packages, while PIC16F874A/877A devices are avail- able in 40-pin and 44-pin packages. All devices in the PIC16F87XA family share common architecture with the following differences:
+            </p>
+            <p>
+                <ul>
+                    <li>The PIC16F873A and PIC16F874A have one-half of the total on-chip memory of the PIC16F876A and PIC16F877A</li>
+                    <li>The 28-pin devices have three I/O ports, while the 40/44-pin devices have five</li>
+                    <li>The 28-pin devices have fourteen interrupts, while the 40/44-pin devices have fifteen</li>
+                    <li>The 28-pin devices have five A/D input channels, while the 40/44-pin devices have eight</li>
+                    <li>The Parallel Slave Port is implemented only on the 40/44-pin devices</li>
+                </ul>
+            </p>
+            <p>
+                The available features are summarized in Table 1-1. Block diagrams of the PIC16F873A/876A and PIC16F874A/877A devices are provided in Figure 1-1  and Figure 1-2, respectively. The pinouts for these device families are listed in Table 1-2 and Table 1-3. Additional information may be found in the PICmicro®Mid-Range Reference Manual (DS33023), which maybe obtained from your local Microchip Sales Represen-tative or downloaded from the Microchip web site. The Reference Manual should be considered a complemen-tary document to this data sheet and is highly recom-mended reading for a better understanding of the device architecture and operation of the peripheral modules.
+            </p>
+        </section>
+        <section id="MEMORY_ORGANIZATION" class="main-section">
+            <header class="titles"><b>MEMORY ORGANIZATION</b></header>
+            <p>There are three memory blocks in each of the PIC16F87XA devices. The program memory and data memory have separate buses so that concurrent access can occur and is detailed in this section. The EEPROM data memory block is detailed in Section 3.0 “Data EEPROM and Flash Program Memory”. Additional information on device memory may be found in the PICmicro ® Mid-Range MCU Family Reference Manual (DS33023). PIC16F876A/877A PROGRAM MEMORY MAP AND STACK
+            </p>
+            <p>2.1 Program Memory Organization The PIC16F87XA devices have a 13-bit program counter capable of addressing an 8K word x 14 bit program memory space. The PIC16F876A/877A devices have 8K words x 14 bits of Flash program memory, while PIC16F873A/874A devices have 4K words x 14 bits. Accessing a location above the physically implemented address will cause a wraparound. The Reset vector is at 0000h and the interrupt vector is at 0004h.
+            </p>
+        </section>
+        <section id="DATA_EEPROM_AND_FLASH" class="main-section">
+            <header class="titles"><b>DATA EEPROM AND FLASH</b></header>
+            <p>The data EEPROM and Flash program memory is read-able and writable during normal operation (over the full VDD range). This memory is not directly mapped in the register file space. Instead, it is indirectly addressed through the Special Function Registers. There are six SFRs used to read and write this memory:
+            </p>
+            <p>
+                <ul>
+                    <li>EECON1</li>
+                    <li>EECON2</li>
+                    <li>EEDATA</li>
+                    <li>EEDATH</li>
+                    <li>EEADR</li>
+                    <li>EEADRH</li>
+                </ul>
+            </p> 
+            <p>When interfacing to the data memory block, EEDATA holds the 8-bit data for read/write and EEADR holds the address of the EEPROM location being accessed. These devices have 128 or 256 bytes of data EEPROM (depending on the device), with an address range from 00h to FFh. On devices with 128 bytes, addresses from 80h to FFh are unimplemented and will wraparound to the beginning of data EEPROM memory. When writing to unimplemented locations, the on-chip charge pump will be turned off. When interfacing the program memory block, the EEDATA and EEDATH registers form a two-byte word that holds the 14-bit data for read/write and the EEADR and EEADRH registers form a two-byte word that holds the 13-bit address of the program memory location being accessed. These devices have 4 or 8K words of program Flash, with an address range from 0000h to 0FFFh for the PIC16F873A/874A and 0000h to 1FFFh for the PIC16F876A/877A. Addresses above the range of the respective device will wraparound to the beginning of program memory.
+            </p>
+            <p> The EEADRH:EEADR register pair can address up to a maximum of 256 bytes of data EEPROM or up to a maximum of 8K words of program EEPROM. When selecting a data address value, only the LSByte of the address is written to the EEADR register. When select- ing a program address value, the MSByte of the address is written to the EEADRH register and the LSByte is written to the EEADR register. If the device contains less memory than the full address reach of the address register pair, the Most Significant bits of the registers are not implemented. For example, if the device has 128 bytes of data EEPROM, the Most Significant bit of EEADR is not implemented on access to data EEPROM.
+            </p>
+        </section>
+        <section id="I/O_PORTS" class="main-section">
+            <header class="titles"><b>I/O PORTS</b></header>
+            <p>Some pins for these I/O ports are multiplexed with an alternate function for the peripheral features on the device. In general, when a peripheral is enabled, that pin may not be used as a general purpose I/O pin. Additional information on I/O ports may be found in the PICmicro™ Mid-Range Reference Manual (DS33023).
+            </p>
+        </section>
+        <section id="TIMER_MODULE" class="main-section">
+            <header class="titles"><b>TIMER MODULE</b></header>
+            <p>
+                The Timer0 module timer/counter has the following features:
+            </p>
+            <p>
+                <ul>
+                    <li>8-bit timer/counter</li>
+                    <li>Readable and writable</li>
+                    <li>8-bit software programmable prescaler</li>
+                    <li>Internal or external clock select</li>
+                    <li>Interrupt on overflow from FFh to 00h</li>
+                    <li>Edge select for external clock</li>
+                </ul>
+            </p>
+            <p>5.1 Timer0 Interrupt
+                The TMR0 interrupt is generated when the TMR0 register overflows from FFh to 00h. This overflow sets bit TMR0IF. The interrupt can be masked by clearing bit TMR0IE. Bit TMR0IF must be cleared in software by the Timer0 module Interrupt Service Routine before re-enabling this interrupt. The TMR0 interrupt cannot awaken the processor from Sleep since the timer is shut-off during Sleep.
+            </p>
+        </section>
+        <section id="PIC_Set_up" class="main-section">
+            <header class="titles"><b>PIC Set up</b></header>
+            <p>The following is the code to set up the PIC16F87XA:</p>
+            <ul>
+                <li>Firt we need to add the library and the main delay for set up: <br>
+                    <code>
+                        #include &lt;pic16f877a.h> void DELAY_ms(unsigned int ms_Count){ unsigned int i,j; for(i=0;i < ms_Count;i++) { for(j=0;j < 1000;j++); } }
+                    </code>
+                </li>
+                <li>Configure all the ports as Output: <br>
+                    <code>
+                        TRISA = 0x00; TRISB = 0x00; TRISC = 0x00; TRISD = 0x00; 
+                    </code>
+                </li>
+                <li>Turn ON all the leds connected to Ports: <br>
+                    <code>
+                        PORTA = 0xff; PORTB = 0xff; PORTC = 0xff; PORTD = 0xff; DELAY_ms(100);
+                    </code>
+                </li>
+                <li>Turn OFF all the leds connected to Ports: <br>
+                    <code>
+                        PORTA = 0x00; PORTB = 0x00; PORTC = 0x00; PORTD = 0x00; DELAY_ms(100);
+                    </code>
+                </li>
+                <li>Full code: <br>
+                    <code>
+                        #include &lt;pic16f877a.h> void DELAY_ms(unsigned int ms_Count){    unsigned int i,j;    for(i=0;i < ms_Count;i++)    {        for(j=0;j < 1000;j++);    }}int main() {    TRISA = 0x00;    TRISB = 0x00;    TRISC = 0x00;    TRISD = 0x00;         while(1)    {        PORTA = 0xff;        PORTB = 0xff;        PORTC = 0xff;        PORTD = 0xff;        DELAY_ms(100);                PORTA = 0x00;        PORTB = 0x00;        PORTC = 0x00;        PORTD = 0x00;        DELAY_ms(100);    }    return (0);}
+                    </code>
+                </li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>
